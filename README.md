@@ -20,6 +20,5 @@ Explanation of the code:
 
 ## R analalysis
 
-What is in the graph?
-
-![Your Graph](results/your-graph.jpeg)
+**Proportion of transitions and transversions across all substitutions:**
+![Proportion of transitions and transversions across all substitutions.](results/all_substitutions.png)
