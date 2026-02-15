@@ -5,9 +5,9 @@
 The proportion of transversions and transitions was analysed using bash script `workflow.sh`. Usage:
 ```bash
 # ./workflow.sh "path-to-data" eg.
-./workflow.sh data/luscinia_vars.vcf.gz 
+./workflow.sh /data-shared/vcf_examples/luscinia_vars.vcf.gz 
 ```
-The script generates tab separated file `outputs/substitution_type.tsv` with nucleotide in the reference sequence, nucleotide in the alternative sequence, and mutation type (transition or transversion) for each substitution. Plots of the substitution type proportions in total (`all_substitutions.png`) and by nucleotide in the reference sequence (`by_nucleotide.png`) are saved in png format in the same directory.
+The script generates tab separated file `results/substitution_type.tsv` with nucleotide in the reference sequence, nucleotide in the alternative sequence, and mutation type (transition or transversion) for each substitution. Plots of the substitution type proportions in total (`all_substitutions.png`) and by nucleotide in the reference sequence (`by_nucleotide.png`) are saved in png format in the same directory.
 
 Explanation of the code:
 * `< "$1" zcat`: Loading data from the file specified by first command line argument.
