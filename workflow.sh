@@ -7,3 +7,4 @@
     awk '{if ($1 ==  "AG" || $1 == "GA" || $1 == "CT" || $1 =="TC") print($1, "transition"); else print($1, "transversion");}' |
     tr " " "\t" |
     sed -E "s/^(.)(.)/\1\t\2/" > results/substitution_type.tsv
+Rscript data-analysis.R
