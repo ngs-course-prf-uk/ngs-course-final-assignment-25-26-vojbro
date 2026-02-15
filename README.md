@@ -1,13 +1,14 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/SzF8zjrH)
 # Unix Course Final Assignment: task 6
 
 **Proportion of transitions (A -> G, G -> A, C -> T, T -> C) and transversions (A -> C/T, C -> A/G, G -> C/T, T -> A/G) in total and by type of nucleotide** 
 
-The substitutions were classified using bash script `workflow.sh`. Usage:
+The proportion of transversions and transitions was analysed using bash script `workflow.sh`. Usage:
 ```bash
 # ./workflow.sh "path-to-data" eg.
 ./workflow.sh data/luscinia_vars.vcf.gz 
 ```
+The script generates tab separated file `outputs/substitution_type.tsv` with nucleotide in the reference sequence, nucleotide in the alternative sequence, and mutation type (transition or transversion) for each substitution. Plots of the substitution type proportions in total (`all_substitutions.png`) and by nucleotide in the reference sequence (`by_nucleotide.png`) are saved in png format in the same directory.
+
 Explanation of the code:
 * `< "$1" zcat`: Loading data from the file specified by first command line argument.
 * `cut -f 1-8`:  Removing columns specifying allele variants in studied individuals.
@@ -20,5 +21,10 @@ Explanation of the code:
 
 ## R analalysis
 
-**Proportion of transitions and transversions across all substitutions:**
-![Proportion of transitions and transversions across all substitutions.](results/all_substitutions.png)
+### Proportion of transitions and transversions across all loci:
+![Proportion of transitions and transversions across all loci.](results/all_substitutions.png)
+In the dataset, transitions are more frequent (representing approximately 56.4 % of all substitutions). 
+
+### Proportion of transitions and transversions by type of nucleotide
+![Proportion of transitions and transversions by nucleotide.](results/by_nucleotide.png)
+The highest proportion of transversions was observed in loci with thymine in the reference sequence (ca. 47.3 %), the proportion was similar among the other nucleotides (G: 40.7 %, A: 43.9 %, C: 42.1 %).
