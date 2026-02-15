@@ -15,4 +15,8 @@ substitutions %>%
   ylab("Proportion")
 ggsave("results/by_nucleotide.png")
 
-                                                                                       
+
+
+print("Proportion of substitution types:")
+with(substitutions,table(type)/sum(table(type)))
+apply(table(substitutions$type,substitutions$ref),1, function(x)x/table(substitutions$ref))
